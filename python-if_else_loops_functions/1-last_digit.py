@@ -13,4 +13,4 @@ if last <= 5 and last != 0:
 elif last > 5:
     print("Last digit of {} is {} and is greater than 5" .format(number, last))
 else:
-    print("Last digit of {} is {} and is zero" .format(number, last))
+    print("Last digit of {} is {} and is 0" .format(number, last))
