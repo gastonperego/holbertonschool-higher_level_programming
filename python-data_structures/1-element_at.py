@@ -2,9 +2,9 @@
 
 def element_at(my_list, idx):
 
-    if idx < 0 or idx > len(my_list) - 1:
+    if idx > len(my_list) - 1 or idx < 0:
         return None
     i = 0
-    while i < len(my_list):
+    while i <= idx:
         i += 1
     return i
