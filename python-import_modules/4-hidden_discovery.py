@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
-from sys import *
-import hidden_4
-
-a = dir(hidden_4)
-print(f"{a}")
-
+if __name__ == "__main__":
+    import hidden_4
+    for i in dir(hidden_4):
+        if not i.startswith('__'):
+            print("{}".format(str(i)))
