@@ -4,7 +4,7 @@ def best_score(a_dictionary):
 
     tmp = 0
     value = []
-    if a_dictionary == [] or a_dictionary is None:
+    if a_dictionary == [] or a_dictionary is None or not a_dictionary:
         return None
     for i in a_dictionary:
         if a_dictionary[i] > tmp:
