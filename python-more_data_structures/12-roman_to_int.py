@@ -18,7 +18,6 @@ def roman_to_int(roman_string):
             if roman_string[i] == j:
                 res += dic[j]
         if i > 0 and roman_string[i - 1] and dic[roman_string[i - 1]] < dic[roman_string[i]]:
-            print(dic[roman_string[i - 1]])
             res -= dic[roman_string[i - 1]] * 2
 
     return res
