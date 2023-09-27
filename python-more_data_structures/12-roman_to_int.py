@@ -12,5 +12,13 @@ def roman_to_int(roman_string):
         "D": 500,
         "M": 1000,
     }
-    
-    
+    res = 0
+    for i in range(0, len(roman_string)):
+        for j in dic:
+            if roman_string[i] == j:
+                res += dic[j]
+        if i > 0 and roman_string[i - 1] and dic[roman_string[i - 1]] < dic[roman_string[i]]:
+            print(dic[roman_string[i - 1]])
+            res -= dic[roman_string[i - 1]] * 2
+
+    return res
