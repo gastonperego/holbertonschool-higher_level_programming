@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def roman_to_int(roman_string):
-    if roman_string is None or not roman_string:
+    if not isinstance(roman_string, str):
         return 0
     dic = {
         "I": 1,
@@ -20,9 +20,10 @@ def roman_to_int(roman_string):
             if roman_string[i] == j:
                 res += dic[j]
         if (
-            i > 0 and 
-            roman_string[i - 1] and 
-            dic[roman_string[i - 1]] < dic[roman_string[i]]):
+            i > 0 and
+            roman_string[i - 1] and
+            dic[roman_string[i - 1]] < dic[roman_string[i]]
+        ):
             res -= dic[roman_string[i - 1]] * 2
 
     return res
