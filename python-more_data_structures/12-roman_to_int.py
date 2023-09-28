@@ -14,10 +14,15 @@ def roman_to_int(roman_string):
     }
     res = 0
     for i in range(0, len(roman_string)):
+        if roman_string[i] not in dic:
+            return 0
         for j in dic:
             if roman_string[i] == j:
                 res += dic[j]
-        if i > 0 and roman_string[i - 1] and dic[roman_string[i - 1]] < dic[roman_string[i]]:
+        if (
+            i > 0 and 
+            roman_string[i - 1] and 
+            dic[roman_string[i - 1]] < dic[roman_string[i]]):
             res -= dic[roman_string[i - 1]] * 2
 
     return res
