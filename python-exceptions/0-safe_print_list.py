@@ -3,13 +3,12 @@
 def safe_print_list(my_list=[], x=0):
     if not my_list or my_list == [] or my_list is None:
         return 0
-    if x <= 0:
-        return 0
-    try:
-        for i in range(x):
-            print(my_list[i], end="")
-        print()
-        return i + 1
-    except (IndexError):
-        print()
-        return i
+    a = 0
+    for i in range(x):
+        try:
+            print("{}".format(my_list[i]), end="")
+            a += 1
+        except (TypeError, IndexError):
+            pass
+    print()
+    return a
