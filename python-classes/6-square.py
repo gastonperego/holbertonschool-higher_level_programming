@@ -1,0 +1,61 @@
+#!/usr/bin/python3
+""" Square  """
+
+
+class Square:
+    """Square with a given size """
+    __size = None
+    __position = (0, 0)
+
+    def __init__(self, size=0, position=(0, 0)):
+        if isinstance(size, int):
+            if size >= 0:
+                self.__size = size
+            else:
+                raise ValueError("size must be >= 0")
+        else:
+            raise TypeError("size must be an integer")
+        if isinstance(position, tuple) and all(x >= 0 for x in position):
+            self.__position = position
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
+    def area(self):
+        return self.__size ** 2
+
+    @property
+    def size(self):
+        return self.__size
+
+    @size.setter
+    def size(self, size=0):
+        if isinstance(size, int):
+            if size >= 0:
+                self.__size = size
+            else:
+                raise ValueError("size must be >= 0")
+        else:
+            raise TypeError("size must be an integer")
+
+    def my_print(self):
+        if self.__size == 0:
+            print()
+        else:
+            if self.position[1] != 0:
+                print("" * self.__position[1])
+            for i in range(self.__size):
+                print(" " * self.__position[0], end="")
+                for j in range(self.__size):
+                    print("#", end="")
+                print()
+
+    @property
+    def position(self):
+        return self.__position
+
+    @position.setter
+    def position(self, position=(0, 0)):
+        if isinstance(position, tuple) and all(x >= 0 for x in position):
+            self.__position = position
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
