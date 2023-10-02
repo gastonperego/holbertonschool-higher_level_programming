@@ -1,0 +1,83 @@
+text_indentation = __import__('5-text_indentation').text_indentation
+
+test 1:
+
+>>> text_indentation("Hola")
+Hola
+
+test 2:
+
+>>> text_indentation("Hola.")
+Hola.
+<BLANKLINE>
+>>>
+
+test 3:
+
+>>> text_indentation("Hola.:?")
+Hola.
+<BLANKLINE>
+:
+<BLANKLINE>
+?
+<BLANKLINE>
+
+test 4: 
+
+>>> text_indentation("")
+
+
+test 5: 
+
+>>> text_indentation("::::::::::")
+:
+<BLANKLINE>
+:
+<BLANKLINE>
+:
+<BLANKLINE>
+:
+<BLANKLINE>
+:
+<BLANKLINE>
+:
+<BLANKLINE>
+:
+<BLANKLINE>
+:
+<BLANKLINE>
+:
+<BLANKLINE>
+:
+<BLANKLINE>
+
+test 6:
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+test 7:
+
+>>> text_indentation(23)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+test 8:
+
+>>> text_indentation("      ")
+      >>>
+
+test 9:
+
+>>> text_indentation("    :    ?    ")
+    :
+<BLANKLINE>
+   ?
+<BLANKLINE>
+
+test 10:
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
