@@ -8,16 +8,16 @@ class Rectangle:
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        elif value < 0:
-            raise ValueError("height must be >= 0")
-        if not isinstance(value, int):
+        if not isinstance(width, int):
             raise TypeError("width must be an integer")
-        elif value < 0:
+        elif width < 0:
             raise ValueError("width must be >= 0")
-        self.__height = value
-        self.__width = value
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        elif height < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = height
+        self.__width = width
         Rectangle.number_of_instances += 1
 
     print_symbol = "#"
