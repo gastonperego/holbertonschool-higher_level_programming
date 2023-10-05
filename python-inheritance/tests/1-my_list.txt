@@ -27,6 +27,7 @@ TypeError: All elements must be integers
 test 4:
 
 >>> my_list.pop()
+'hola'
 >>> my_list.append(None)
 >>> my_list.print_sorted()
 Traceback (most recent call last):
@@ -44,6 +45,3 @@ test 6:
 >>> my_list.append(1)
 >>> my_list.print_sorted()
 [1, 4]
-
-
-
