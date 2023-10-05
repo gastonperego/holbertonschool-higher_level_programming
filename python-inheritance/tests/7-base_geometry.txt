@@ -1,0 +1,100 @@
+"""a"""
+
+>>> integer_validator = __import__('7-base_geometry').BaseGeometry.integer_validator
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+test 1:
+
+>>> bg.integer_validator("value", 1)
+
+
+test 2:
+
+>>> bg.integer_validator("value", 0)
+Traceback (most recent call last):
+ValueError: value must be greater than 0
+
+test 3:
+
+>>> bg.integer_validator("value", -53)
+Traceback (most recent call last):
+ValueError: value must be greater than 0
+
+test 4:
+
+>>> bg.integer_validator("value", None)
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+
+test 5:
+
+>>> bg.integer_validator("value", 2.3434)
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+
+test 6:
+
+>>> bg.integer_validator("value", "aaaa")
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+
+test 7:
+
+>>> bg.integer_validator("value", NaN)
+Traceback (most recent call last):
+NameError: name 'NaN' is not defined
+
+
+test 8:
+
+>>> bg.integer_validator("value", (1, 2, 3))
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+
+test 9:
+
+>>> bg.integer_validator("value", [1, 2, 3])
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+
+test 10:
+
+>>> bg.integer_validator("value")
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+
+test 11:
+
+>>> bg.integer_validator(2)
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+
+test 12:
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+
+test 13:
+
+>>> dic = { "a" : 0, "b" : 1, "c" : 2}
+>>> bg.integer_validator("value", dict)
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+
+test 14:
+
+>>> s = set([2, 2, 3, 4, 6,])
+>>> bg.integer_validator("value", s)
+Traceback (most recent call last):
+TypeError: value must be an integer
