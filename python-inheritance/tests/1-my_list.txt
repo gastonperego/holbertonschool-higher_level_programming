@@ -1,0 +1,47 @@
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+
+test 1:
+
+>>> my_list.print_sorted()
+[]
+
+test 2:
+
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+test 3:
+
+>>> my_list = MyList()
+>>> my_list.append("hola")
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+TypeError: All elements must be integers
+
+test 4:
+
+>>> my_list.pop()
+>>> my_list.append(None)
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+TypeError: All elements must be integers
+
+test 5:
+
+>>> my_list.pop()
+>>> my_list.append(4)
+>>> my_list.print_sorted()
+[4]
+
+test 6:
+
+>>> my_list.append(1)
+>>> my_list.print_sorted()
+[1, 4]
+
+
+
