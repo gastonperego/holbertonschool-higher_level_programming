@@ -6,9 +6,11 @@ class BaseGeometry:
     """a"""
 
     def area(self):
+        """a"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
+        """a"""
         if type(name) is not str:
             raise TypeError("name must be a string")
         if type(value) is not int:
