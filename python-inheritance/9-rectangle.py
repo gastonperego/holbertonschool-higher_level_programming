@@ -16,10 +16,10 @@ class Rectangle(BaseGeometry):
             init
         """
 
-        if self.integer_validator("width", width) is True:
-            self.__width = width
-        if self.integer_validator("height", height) is True:
-            self.__height = height
+        self.integer_validator("width", width)
+        self.__width = width
+        self.integer_validator("height", height)
+        self.__height = height
 
     def area(self):
         """
