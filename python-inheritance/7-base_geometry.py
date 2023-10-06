@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A"""
+"""CLass definition base geometry"""
 
 
 class BaseGeometry:
@@ -11,7 +11,8 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """Function that validates an integer"""
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-        elif value < 1:
-            raise ValueError(f"{name} must be greater than 0")
+        if type(name) is str:
+            if type(value) is not int:
+                raise TypeError(f"{name} must be an integer")
+            elif value < 1:
+                raise ValueError(f"{name} must be greater than 0")
