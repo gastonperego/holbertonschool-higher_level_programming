@@ -98,3 +98,16 @@ test 14:
 >>> bg.integer_validator("value", s)
 Traceback (most recent call last):
 TypeError: value must be an integer
+
+
+test 15:
+
+>>> bg.integer_validator( , 12)
+SyntaxError: invalid syntax
+
+
+test 16:
+
+>>> bg.integer_validator("value", float('inf'))
+Traceback (most recent call last):
+TypeError: value must be an integer
