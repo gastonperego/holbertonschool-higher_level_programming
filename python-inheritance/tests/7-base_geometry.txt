@@ -1,4 +1,4 @@
-"""a"""
+"""Checker la recalcada concha de tu madre"""
 
 >>> integer_validator = __import__('7-base_geometry').BaseGeometry.integer_validator
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry

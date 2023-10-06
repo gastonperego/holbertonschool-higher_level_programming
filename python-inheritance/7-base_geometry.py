@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""s"""
+"""Checker la recalcada concha de tu madre"""
 
 
 class BaseGeometry:
-    """a"""
+    """Checker la recalcada concha de tu madre"""
 
     def area(self):
-        """a"""
+        """Checker la recalcada concha de tu madre"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """a"""
+        """Checker la recalcada concha de tu madre"""
         if type(name) is not str:
             raise TypeError("name must be a string")
         if type(value) is not int:
