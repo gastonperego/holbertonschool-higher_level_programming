@@ -9,4 +9,3 @@ def read_file(filename=""):
         read_text = file.read()
 
     print(read_text)
-    file.closed
