@@ -1,28 +1,20 @@
 #!/usr/bin/python3
-"""s"""
+"""
+    Class rectangle
+"""
 
-
-class BaseGeometry:
-    """a"""
-
-    def area(self):
-        """a"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """a"""
-        
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-        elif value < 1:
-            raise ValueError(f"{name} must be greater than 0")
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """d """
+    """
+        Class Rectangle
+    """
 
     def __init__(self, width, height):
-        """a"""
+        """
+            init
+        """
 
         if self.integer_validator("width", width):
             self.__width = width
