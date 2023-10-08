@@ -27,8 +27,6 @@ class Student:
 
     def reload_from_json(self, json):
         """reloads from json"""
-
-        my_list = []
-        for i in json:
-            my_list.append(json[i])
-        self.__init__(my_list[0], my_list[1], my_list[2])
+        
+        self.__dict__.update(json)
+            
