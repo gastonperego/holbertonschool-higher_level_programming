@@ -103,3 +103,9 @@ class Rectangle(Base):
             if i != self.height - 1:
                 string += '\n'
         print(string)
+    
+    def __str__(self):
+        """returns something"""
+
+        string1 = f"{self.__width}/{self.__height}"
+        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - " + string1)
