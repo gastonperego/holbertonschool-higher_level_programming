@@ -93,19 +93,20 @@ class Rectangle(Base):
     def display(self):
         """prints the rectangle with \"#\""""
 
-        string = ""
-        if self.height == 0 or self.width == 0:
-            return string
+        position = [self.__x, self.__y]
+        if position[1] != 0:
+            for i in range(position[1]):
+                print()
+        for i in range(self.__height):
+            print(" " * position[0], end="")
+            for j in range(self.__width):
+                print("#", end="")
+            print()
 
-        for i in range(self.height):
-            for j in range(self.width):
-                string += "#"
-            if i != self.height - 1:
-                string += '\n'
-        print(string)
 
     def __str__(self):
         """returns something"""
 
         string1 = f"{self.__width}/{self.__height}"
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - " + string1)
+
