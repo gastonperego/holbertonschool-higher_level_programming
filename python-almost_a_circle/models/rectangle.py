@@ -103,7 +103,7 @@ class Rectangle(Base):
             if i != self.height - 1:
                 string += '\n'
         print(string)
-    
+
     def __str__(self):
         """returns something"""
 
