@@ -144,4 +144,4 @@ class Rectangle(Base):
     def to_dictionary(self):
         """returns dictionary"""
 
-        return dict(self.__dict__)
+        return self.__dict__
