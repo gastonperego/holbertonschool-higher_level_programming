@@ -132,14 +132,14 @@ class Rectangle(Base):
             for key in kwargs:
                 if key == "id":
                     self.id = kwargs["id"]
-                if key == "width":
-                    self.__width = kwargs["width"]
-                if key == "height":
-                    self.__height = kwargs["height"]
-                if key == "x":
-                    self.__x = kwargs["x"]
-                if key == "y":
-                    self.__y = kwargs["y"]
+                if key == "width" or key == "_Rectangle__width":
+                    self.__width = kwargs[key]
+                if key == "height" or key == "_Rectangle__height":
+                    self.__height = kwargs[key]
+                if key == "x" or key == "_Rectangle__x":
+                    self.__x = kwargs[key]
+                if key == "y" or key == "_Rectangle__y":
+                    self.__y = kwargs[key]
 
     def to_dictionary(self):
         """returns dictionary"""
