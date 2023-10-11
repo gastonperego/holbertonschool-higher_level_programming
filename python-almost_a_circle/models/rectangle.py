@@ -107,8 +107,12 @@ class Rectangle(Base):
     def __str__(self):
         """returns something"""
 
-        string1 = f"{self.__width}/{self.__height}"
-        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - " + string1)
+        if self.__width != self.__height:
+            string1 = f"{self.__width}/{self.__height}"
+            return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - " + string1)
+        else:
+            string1 = f"{self.__width}"
+            return (f"[Square] ({self.id}) {self.__x}/{self.__y} - " + string1)
 
     def update(self, *args, **kwargs):
         """updates the values of th rectangle"""
