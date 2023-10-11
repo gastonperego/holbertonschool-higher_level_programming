@@ -107,9 +107,9 @@ class Rectangle(Base):
     def __str__(self):
         """returns something"""
 
-        if self.__width != self.__height:
-            string1 = f"{self.__width}/{self.__height}"
-            return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - " + string1)
+        if type(self) is Rectangle:
+            st = f"{self.__width}/{self.__height}"
+            return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - " + st)
         else:
             string1 = f"{self.__width}"
             return (f"[Square] ({self.id}) {self.__x}/{self.__y} - " + string1)
@@ -140,7 +140,7 @@ class Rectangle(Base):
                     self.__x = kwargs["x"]
                 if key == "y":
                     self.__y = kwargs["y"]
-    
+
     def to_dictionary(self):
         """returns dictionary"""
 
