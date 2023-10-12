@@ -26,3 +26,21 @@ class Base:
             ret.append(dic)
 
         return json.dumps(ret)
+
+    def save_to_file(cls, list_objs):
+        """writes the JSON string representation of list_objs to a file"""
+
+        with open(f"{cls}.json", "w", encoding="utf-8") as file:
+
+            if list_objs is None or len(list_objs) == 0:
+                file.write("[]")
+            else:
+                file.write(to_json_string(list_objs))
+
+    def from_json_string(json_string):
+        """"""
+
+        if json_string is None or len(json_string) == 0:
+            return ""
+        else:
+            return list(json.loads(json_string))
