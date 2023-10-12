@@ -21,8 +21,8 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
 
-        ret = ""
+        ret = []
         for dic in list_dictionaries:
-            ret += json.dumps(str(dic))
+            ret.append(str(dic))
 
-        return ret
+        return json.dumps(ret)
