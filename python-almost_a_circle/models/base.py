@@ -23,6 +23,6 @@ class Base:
 
         ret = []
         for dic in list_dictionaries:
-            ret.append(str(dic))
+            ret.append(dic)
 
         return json.dumps(ret)
