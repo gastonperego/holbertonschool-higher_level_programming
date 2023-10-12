@@ -29,7 +29,6 @@ class Square(Rectangle):
         else:
             self.__size = value
             self.width = value
-            self.height = value
 
     def update(self, *args, **kwargs):
         """Updates the values of the square"""
