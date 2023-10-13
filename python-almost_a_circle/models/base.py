@@ -39,7 +39,7 @@ class Base:
             else:
                 lis = []
                 for obj in list_objs:
-                    lis.append(Base.to_json_string(obj.__dict__))    
+                    lis.append(Base.to_json_string(obj.__dict__))
                 file.write(Base.to_json_string(lis))
 
     def from_json_string(json_string):
