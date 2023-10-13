@@ -31,12 +31,16 @@ class Base:
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
 
-        with open(f"{cls}.json", "w", encoding="utf-8") as file:
+        with open("Rectangle.json", "w", encoding="utf-8") as file:
 
+            print(cls)
             if list_objs is None or len(list_objs) == 0:
                 file.write("[]")
             else:
-                file.write(to_json_string(list_objs))
+                string = ""
+                for obj in list_objs:
+                    string += Base.to_json_string(obj.__dict__)    
+                file.write(string)
 
     def from_json_string(json_string):
         """converts a json string into a list"""
