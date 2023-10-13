@@ -51,4 +51,4 @@ class Square(Rectangle):
         """returns dictionary"""
 
         return ({"id": self.id, "x": self.x,
-                "size": self.__size, "y": self.y})
+                "size": self.size, "y": self.y})
