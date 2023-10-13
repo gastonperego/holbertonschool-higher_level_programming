@@ -65,12 +65,15 @@ class Base:
     def load_from_file(cls):
         """load from file to instance"""
 
-        with open(f"{cls.__name__}.json", "r", encoding="utf-8") as file:
-            read = file.read()
-            lis = cls.from_json_string(read)
-            new_list = []
+        try:
+            with open(f"{cls.__name__}.json", "r", encoding="utf-8") as file:
+                read = file.read()
+                lis = cls.from_json_string(read)
+                new_list = []
 
-            for dic in lis:
-                new_list.append(cls.create(**dic))
+                for dic in lis:
+                    new_list.append(cls.create(**dic))
 
-            return new_list
+                return new_list
+        except(FileNotFoundError):
+            return []
