@@ -1,24 +1,17 @@
 """Rectangle test"""
 import unittest
-
+from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
 class RectangleTests(unittest.TestCase):
-    
-    def full_rectangle(self):
-        self.assertTrue(3, 4, 5, 2, 12)
+
+    def test_only_arg(self):
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(1)
         
-    def no_id(self):
-        self.assertTrue(3, 4, 5, 2)
+    def test_no_args(self):
+        with self.assertRaises(TypeError):
+            r1 = Rectangle()
         
-    def args_3(self):
-        self.assertTrue(3, 4, 5)
-        
-    def args_2(self):
-        self.assertTrue(3, 4)
-    
-    def only_arg(self):
-        self.assertFalse(3)
-        
-    def no_args(self):
-        self.assertFalse()
    
