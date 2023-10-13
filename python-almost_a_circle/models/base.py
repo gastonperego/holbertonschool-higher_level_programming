@@ -46,5 +46,5 @@ class Base:
         """converts a json string into a list"""
 
         if json_string is None or json_string == "":
-            return "[]"
+            return []
         return json.loads(json_string)
