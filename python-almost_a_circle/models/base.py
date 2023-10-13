@@ -15,6 +15,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """return a json string of a list of dictionaries"""
 
@@ -31,16 +32,15 @@ class Base:
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
 
-        with open("Rectangle.json", "w", encoding="utf-8") as file:
+        with open(f"{cls.__name__}.json", "w", encoding="utf-8") as file:
 
-            print(cls)
             if list_objs is None or len(list_objs) == 0:
                 file.write("[]")
             else:
-                string = ""
+                lis = []
                 for obj in list_objs:
-                    string += Base.to_json_string(obj.__dict__)    
-                file.write(string)
+                    lis.append(Base.to_json_string(obj.__dict__))    
+                file.write(Base.to_json_string(lis))
 
     def from_json_string(json_string):
         """converts a json string into a list"""
