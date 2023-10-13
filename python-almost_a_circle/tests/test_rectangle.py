@@ -38,15 +38,15 @@ class RectangleTests(unittest.TestCase):
         r1 = Rectangle(2, 2, 2, 2)
         self.assertEqual(2, r1.width)
 
-    def test_getter_works_1(self):
+    def test_getter_works_2(self):
         r1 = Rectangle(2, 2, 2, 2)
         self.assertEqual(2, r1.height)
 
-    def test_getter_works_1(self):
+    def test_getter_works_3(self):
         r1 = Rectangle(2, 2, 2, 2)
         self.assertEqual(2, r1.x)
 
-    def test_getter_works_1(self):
+    def test_getter_works_4(self):
         r1 = Rectangle(2, 2, 2, 2)
         self.assertEqual(2, r1.y)
    
