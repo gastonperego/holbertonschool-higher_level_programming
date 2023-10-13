@@ -60,3 +60,17 @@ class Base:
 
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """load from file to instance"""
+
+        with open(f"{cls.__name__}.json", "r", encoding="utf-8") as file:
+            read = file.read()
+            lis = cls.from_json_string(read)
+            new_list = []
+
+            for dic in lis:
+                new_list.append(cls.create(**dic))
+
+            return new_list
