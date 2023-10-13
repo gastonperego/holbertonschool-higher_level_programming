@@ -32,15 +32,15 @@ class Base:
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
 
-        with open(f"{cls.__name__}.json", "w", encoding="utf-8") as file:
+        if list_objs is None or len(list_objs) == 0:
+            ret = []
+        else:
+            ret = []
+            for obj in list_objs:
+                ret.append(obj.to_dictionary())
 
-            if list_objs is None or len(list_objs) == 0:
-                file.write("[]")
-            else:
-                lis = []
-                for obj in list_objs:
-                    lis.append(Base.to_json_string(obj.__dict__))
-                file.write(Base.to_json_string(lis))
+        with open(f"{cls.__name__}.json", "w", encoding="utf-8") as file:
+            file.write(cls.to_json_string(ret))
 
     def from_json_string(json_string):
         """converts a json string into a list"""
