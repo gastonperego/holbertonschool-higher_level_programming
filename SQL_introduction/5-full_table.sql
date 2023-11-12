@@ -1,3 +1,3 @@
 -- displays a description of a table
 -- displays a description of a table
-DESC first_table;
+SHOW CREATE first_table;
