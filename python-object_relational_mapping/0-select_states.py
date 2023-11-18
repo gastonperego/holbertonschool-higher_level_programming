@@ -17,4 +17,3 @@ if __name__ == "__main__":
     table = cur.fetchall()
     for row in table:
         print(row)
-
