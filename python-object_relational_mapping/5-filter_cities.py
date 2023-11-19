@@ -13,10 +13,10 @@ if __name__ == "__main__":
                          db=argv[3])
     cur = db.cursor()
     query = """
-                SELECT cities.name 
-                FROM cities 
-                WHERE cities.state_id = 
-                (SELECT states.id FROM states WHERE name=%s) 
+                SELECT cities.name
+                FROM cities
+                WHERE cities.state_id =
+                (SELECT states.id FROM states WHERE name=%s)
                 ORDER BY cities.id ASC"""
     cur.execute(query, argv[4])
     table = cur.fetchall()
