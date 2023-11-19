@@ -15,5 +15,5 @@ if __name__ == "__main__":
     rows = session.query(State).order_by(state.id).all()
     i = 1
     for row in rows:
-        print(f"{i}: {row}")
+        print(f"{i}: {row.name}")
         i += 1
