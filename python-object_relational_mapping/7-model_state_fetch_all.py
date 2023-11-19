@@ -13,5 +13,7 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
     rows = session.query(State).order_by(state.id).all()
+    i = 1
     for row in rows:
-        print(row)
+        print(f"{i}: {row}")
+        i += 1
