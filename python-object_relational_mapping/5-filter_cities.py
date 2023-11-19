@@ -16,7 +16,7 @@ if __name__ == "__main__":
                 SELECT cities.name
                 FROM cities
                 WHERE cities.state_id =
-                (SELECT states.id FROM states WHERE name=%s)
+                (SELECT id FROM states WHERE name=%s)
                 ORDER BY cities.id ASC"""
     cur.execute(query, (argv[4],))
     table = cur.fetchall()
@@ -24,3 +24,6 @@ if __name__ == "__main__":
         print(table[i], end="")
         if i != len(table) - 1:
             print(", ", end="")
+    print()
+    cur.close()
+    db.close()
