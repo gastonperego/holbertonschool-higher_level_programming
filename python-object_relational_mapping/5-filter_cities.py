@@ -18,7 +18,7 @@ if __name__ == "__main__":
                 WHERE cities.state_id =
                 (SELECT states.id FROM states WHERE name=%s)
                 ORDER BY cities.id ASC"""
-    cur.execute(query, argv[4])
+    cur.execute(query, (argv[4],))
     table = cur.fetchall()
     for i in range(len(table)):
         print(table[i], end="")
