@@ -14,7 +14,7 @@ if __name__ == "__main__":
     engine = create_engine(f"mysql://{argv[1]}:{argv[2]}@localhost/{argv[3]}")
     Session = sessionmaker(engine)
     session = Session()
-    rows = session.query(State).filter(name == argv[4]).order_by(State.id)
+    rows = session.query(State).filter(name=argv[4]).order_by(State.id)
     if rows:
         print(rows.id)
     else:
