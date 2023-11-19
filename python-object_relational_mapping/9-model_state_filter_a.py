@@ -13,7 +13,7 @@ if __name__ == "__main__":
     engine = create_engine(f"mysql://{argv[1]}:{argv[2]}@localhost/{argv[3]}")
     Session = sessionmaker(engine)
     session = Session()
-    rows = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
+    ro = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
 
-    for row in rows:
+    for row in ro:
         print(f"{row.id}: {row.name}")
