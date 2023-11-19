@@ -13,9 +13,9 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("""
                 SELECT cities.id, cities.name, states.name
-                FROM states
-                INNER JOIN cities ON states.id = cities.state_id 
-                ORDER BY cities.id
+                 FROM states
+                 INNER JOIN cities ON states.id = cities.state_id 
+                 ORDER BY cities.id
                 """)
     table = cur.fetchall()
     for row in table:
