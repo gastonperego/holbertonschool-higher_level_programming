@@ -1,21 +1,29 @@
 #!/usr/bin/python3
 """
-    prints the State object with the name passed as argument
-     from the database hbtn_0e_6_usa
+This module uses SqlAlchemy to make a connection to
+DataBase and print id of searched State name
 """
-
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
 from sys import argv
 from model_state import Base, State
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
 
 if __name__ == "__main__":
 
-    engine = create_engine(f"mysql://{argv[1]}:{argv[2]}@localhost/{argv[3]}")
-    Session = sessionmaker(engine)
-    session = Session()
-    rows = session.query(State).filter(State.name.like(argv[4]))
-    if rows:
-        print(rows.id)
+    user = argv[1]
+    passwd = argv[2]
+    database = argv[3]
+    state_name = argv[4]
+
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
+                           format(user, passwd, database), pool_pre_ping=True)
+
+    session = Session(engine)
+
+    row = session.query(State).filter(State.name.like(state_name)).first()
+    if row:
+        print("{}".format(row.id))
     else:
         print("Not found")
+
+    session.close()
