@@ -20,7 +20,5 @@ if __name__ == "__main__":
                 ORDER BY cities.id ASC"""
     cur.execute(query, argv[4])
     table = cur.fetchall()
-    for i in range(len(table)):
-        print(table[i])
-        if i != len(table) - 1:
-            print(",")
+    for row in table:
+        print(row)
