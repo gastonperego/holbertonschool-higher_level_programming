@@ -16,5 +16,3 @@ if __name__ == "__main__":
     states_row = session.query(State).order_by(State.id).first()
 
     print(f"{states_row.id}: {states_row.name}")
-    
-    
