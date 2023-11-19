@@ -20,11 +20,11 @@ if __name__ == "__main__":
                 ORDER BY cities.id ASC"""
     cur.execute(query, (argv[4],))
     table = cur.fetchall()
- 
+
     prints = []
     for row in table:
         prints.append(row[0])
-    
+
     print(*prints, sep=", ")
     cur.close()
     db.close()
