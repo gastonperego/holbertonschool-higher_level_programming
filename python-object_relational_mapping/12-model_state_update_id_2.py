@@ -11,6 +11,6 @@ if __name__ == "__main__":
 
     engine = create_engine(f"mysql://{argv[1]}:{argv[2]}@localhost/{argv[3]}")
     session = Session(engine)
-    obj = session.query(State).filter(State.id == 2)
+    obj = session.query(State).filter(State.id == 2).first()
     obj.name = "New Mexico"
     session.commit()
