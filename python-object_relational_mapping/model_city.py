@@ -4,7 +4,7 @@
 """
 
 from model_state import Base
-from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy import Column, Integer, String, ForeignKey, create_engine
 
 
 class City(Base):
@@ -16,5 +16,4 @@ class City(Base):
     id = Column("id", Integer, unique=True, autoincrement=True,
                 primary_key=True, nullable=False)
     name = Column("name", String(128), nullable=False)
-    state_id = Column("state_id", Integer, nullable=False,
-                      ForeignKey("states.id"))
+    state_id = Column("state_id", Integer, ForeignKey('states.id'), nullable=False)
