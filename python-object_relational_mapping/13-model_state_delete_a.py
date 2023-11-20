@@ -6,12 +6,14 @@
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
 
     engine = create_engine(f"mysql://{argv[1]}:{argv[2]}@localhost/{argv[3]}")
-    session = Session(engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
     ro = session.query(State).filter(State.name.like('%a%'))
     ro.delete()
     session.commit()
+    session.close()
