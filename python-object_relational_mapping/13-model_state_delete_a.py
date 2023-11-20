@@ -13,4 +13,4 @@ if __name__ == "__main__":
     engine = create_engine(f"mysql://{argv[1]}:{argv[2]}@localhost/{argv[3]}")
     session = Session(engine)
     ro = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
-    ro.delete(ro)
+    session.delete(ro)
