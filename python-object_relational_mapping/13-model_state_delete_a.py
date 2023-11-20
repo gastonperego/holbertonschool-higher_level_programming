@@ -13,7 +13,7 @@ if __name__ == "__main__":
     engine = create_engine(f"mysql://{argv[1]}:{argv[2]}@localhost/{argv[3]}")
     Session = sessionmaker(bind=engine)
     session = Session()
-    ro = session.query(State).filter(State.name.like('%a%'))
+    ro = session.query(State).filter(State.name.contains('a'))
     ro.delete()
     session.commit()
-    session.close()
+
