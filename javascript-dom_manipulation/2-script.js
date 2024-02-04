@@ -1,5 +1,5 @@
-const red_header = document.querySelector('#red_header')
-red_header.onclick = function() {
-    const header = document.querySelector('header')
-    header.setAttribute('class', 'red')
-}
+const redHeader = document.querySelector('#red_header');
+redHeader.onclick = function () {
+  const header = document.querySelector('header');
+  header.setAttribute('class', 'red');
+};
